@@ -1,0 +1,103 @@
+<!DOCTYPE>
+<html>
+<head>
+	<style>
+/*Tab Styling*/
+div.tab {
+    overflow: hidden;
+    border: 1px solid #B8B9BB;
+    background-color: #B8C9BB;
+}
+
+
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+div.tab button:hover {
+    background-color: #B8B9BB;
+}
+
+
+div.tab button.active {
+    background-color: #B8C9BB;
+}
+
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #B8C9BB;
+    border-top: none;
+}
+	
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+	</style>
+</head>
+<body background="http://cdn.wallpapersafari.com/33/63/SHatWn.jpg">
+	<font stlye="Clean">
+
+	<div class="tab">
+  		<button class="tablinks" onclick="openMe(event, 'Home')" id="defaultOpen"><font size="5">Home</button></font>
+  		<button class="tablinks" onclick="openMe(event, 'Me')"><font size="5">Me</button></font>
+  		<button class="tablinks" onclick="openMe(event, 'My Family')"><font size="5">My Family</button></font>
+  		<button class="tablinks" onclick="openMe(event, 'Games')"><font size="5">Games</button></font>
+	</div>
+
+	<font size="4">
+	<div id="Home" class="tabcontent">
+  		<h1><center>Home<center></h1>
+  		<p>Name: William</p>
+  		<p>Age: 15</p>
+  		<p>Grade: 10th</p>
+	</div>
+
+	<div id="Me" class="tabcontent">
+  		<h1><center>Me<center></h1>
+ 		
+	</div>
+
+	<div id="My Family" class="tabcontent">
+ 		<h1><center>My Family<center></h1>
+  		
+	</div>
+
+	<div id="Games" class="tabcontent">
+		<h1><center>Games</center></h1>
+
+	</div>	
+	<audio controls autoplay="true">
+		<source src="A Touch Of Zen.mp3" type="audio/mpeg">
+	</audio>
+	<p><sub><font color="#006400">The current song is A Touch Of Zen</font></sub></p>
+
+	<script>
+	//Open Tabs
+function openMe(evt, meName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(meName).style.display = "block";
+    evt.currentTarget.className += " active";
+} 
+	//Auto Open Home Tab
+	document.getElementById("defaultOpen").click();
+	</script>
+</body>
+</html>
